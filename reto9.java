@@ -29,3 +29,44 @@ FP
 13
 14
 FP + Máster */
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class reto9 {
+    public static void main(String[] args) {
+        int fecha = 0;
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            try {
+                System.out.print("Introduce una fecha (1 - 31): ");
+                fecha = sc.nextInt();
+
+                if (fecha <= 0 || fecha > 31) {
+                    System.out.println("El dato no está en el rango permitido, intentalo de nuevo.");
+                    continue;
+                }
+
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("El dato introducido no es un número, inténtalo de nuevo.");
+                sc.nextLine();
+            }
+        }
+        
+        for (int i = 1; i <= fecha; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FP + Máster");
+            } else if (i % 3 == 0) {
+                System.out.println("FP");
+            } else if (i % 5 == 0) {
+                System.out.println("Máster");
+            } else {
+                System.out.println(i);
+            }
+        }
+
+        sc.close();
+    }
+}
