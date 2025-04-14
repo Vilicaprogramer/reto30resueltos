@@ -35,7 +35,7 @@ import java.util.Scanner;
 
 public class reto9 {
     public static void main(String[] args) {
-        int fecha = 0;
+        int fecha;
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -54,7 +54,7 @@ public class reto9 {
                 sc.nextLine();
             }
         }
-        
+
         for (int i = 1; i <= fecha; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 System.out.println("FP + Máster");
